@@ -6,9 +6,9 @@
 // Add your WhatsApp number in international format, digits only.
 // Example: "919876543210" for an Indian number +91 98765 43210.
 // Leave empty to hide the WhatsApp link/CTA fallback.
-export const WHATSAPP_NUMBER = ''
+export const WHATSAPP_NUMBER = '919625918606'
 
-export const WHATSAPP_MESSAGE = "Hi Sultan X Agency, I'd like to grow my digital presence."
+export const WHATSAPP_MESSAGE = "Hi, Can I get more information on your services?"
 
 export const getWhatsAppLink = () => {
   if (!WHATSAPP_NUMBER) return null
