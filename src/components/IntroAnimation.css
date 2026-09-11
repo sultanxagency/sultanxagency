@@ -1,0 +1,131 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  cursor: pointer;
+  transition: opacity 0.5s var(--ease), visibility 0.5s var(--ease);
+}
+
+.intro-exit {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 0 1.5rem;
+}
+
+.intro-welcome {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: var(--text-muted);
+  margin: 0;
+  opacity: 0;
+  animation: introFadeUp 0.8s var(--ease) forwards 0.15s;
+}
+
+.intro-welcome-out {
+  animation: introFadeDown 0.5s var(--ease) forwards;
+}
+
+.intro-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 7vw, 3.6rem);
+  letter-spacing: 0.02em;
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(14px) scale(0.97);
+}
+
+.intro-title-in {
+  animation: introTitleReveal 0.9s var(--ease) forwards;
+}
+
+.intro-mark {
+  opacity: 0;
+  transform: scale(0.7);
+  margin-top: 0.5rem;
+}
+
+.intro-mark-in {
+  animation: introMarkReveal 0.6s var(--ease) forwards;
+}
+
+.intro-skip {
+  position: absolute;
+  bottom: clamp(1.5rem, 5vh, 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+@keyframes introFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introFadeDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes introTitleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes introMarkReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.7) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.brand-mark-animated .brand-mark-x {
+  stroke-dasharray: 68;
+  stroke-dashoffset: 68;
+  animation: markDraw 0.7s var(--ease) forwards 0.1s;
+}
+
+@keyframes markDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

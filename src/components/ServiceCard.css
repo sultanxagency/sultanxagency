@@ -1,0 +1,118 @@
+.service-card-wrap {
+  list-style: none;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  transition: border-color var(--dur-base) var(--ease), background var(--dur-base) var(--ease),
+    transform var(--dur-base) var(--ease);
+}
+
+.service-card:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+  transform: translateY(-3px);
+}
+
+.service-card-open {
+  border-color: var(--gold-dim);
+}
+
+.service-card-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  background: transparent;
+  border: none;
+  padding: 1.5rem;
+  text-align: left;
+  color: var(--text);
+}
+
+.service-card-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  color: var(--gold);
+  transition: color var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease);
+}
+
+.service-card-open .service-card-icon {
+  color: var(--gold-bright);
+  border-color: var(--gold);
+}
+
+.service-card-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.service-card-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.service-card-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.service-card-arrow {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--text-dim);
+  transition: transform var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+}
+
+.service-card-open .service-card-arrow {
+  transform: rotate(45deg);
+  color: var(--gold-bright);
+}
+
+.service-card-detail {
+  display: grid;
+  transition: grid-template-rows var(--dur-base) var(--ease);
+  overflow: hidden;
+}
+
+.service-card-detail-inner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+}
+
+.service-card-open .service-card-detail-inner {
+  padding: 0 1.5rem 1.5rem 5.6rem;
+}
+
+.service-card-detail-inner p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 1.1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card-arrow,
+  .service-card-detail {
+    transition: none;
+  }
+}
