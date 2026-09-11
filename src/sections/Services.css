@@ -1,0 +1,21 @@
+.services-lede {
+  margin-top: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1080px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
