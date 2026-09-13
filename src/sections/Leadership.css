@@ -1,0 +1,48 @@
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+}
+
+.leadership-role {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.leadership-name {
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  margin-bottom: 1.25rem;
+}
+
+.leadership-bio {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 860px) {
+  .leadership-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  .leadership-grid-reverse {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .leadership-grid-reverse .leadership-copy-col {
+    order: 1;
+  }
+
+  .leadership-grid-reverse .leadership-portrait-col {
+    order: 2;
+  }
+}
